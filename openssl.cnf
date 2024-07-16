@@ -1,0 +1,26 @@
+[ req ]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_ca
+
+[ req_distinguished_name ]
+countryName = Country Name (2 letter code)
+countryName_default = US
+stateOrProvinceName = State or Province Name (full name)
+stateOrProvinceName_default = California
+localityName = Locality Name (eg, city)
+localityName_default = San Francisco
+organizationName = Organisation Name (eg, company)
+organizationName_default = My Company
+commonName = Common Name (e.g. server FQDN or YOUR name)
+commonName_max = 64
+
+[ v3_ca ]
+basicConstraints = critical, CA:TRUE, pathlen:0
+keyUsage = critical, digitalSignature, keyCertSign, cRLSign
+
+[ v3_req ]
+basicConstraints = critical, CA:FALSE
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = clientAuth
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid, issuer
